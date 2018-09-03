@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import Classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -72,23 +72,23 @@ class App extends Component {
         </div> 
       );
 
-      btnStyle.backgroundColor = 'red';
+      btnStyle.backgroundColor = Classes.red;
     }
 
   
 
-    const classes = [];
+    const assignedClasses = [];
     if(this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedClasses.push(Classes.red);
     }
     if(this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedClasses.push(Classes.bold);
     }
 
     return (
-      <div className="App">
+      <div className={Classes.App}>
         <h1>Hi, I am react app</h1>
-        <p className={classes.join(' ')}>This is really working</p>
+        <p className={assignedClasses.join(' ')}>This is really working</p>
         <button style={btnStyle} onClick={this.togglePersonsHandler}>Switch Names</button>
 
         {/* APPROACH 2 - CONDITIONAL RENDERING */}
